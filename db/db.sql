@@ -10,20 +10,22 @@ create table user(
     created_time  datetime default current_timestamp
 )
 
+create table categories(
+    id int primary key auto_increment,
+    title varchar(30),
+    description varchar(50)
+);
+
 create table blogs(
-    id int auto_increment primary key,
-    title varchar(20),
-    contents varchar(30),
+    id int primary key auto_increment,
+    title varchar(100),
+    contents varchar(1000),
     created_time datetime default current_timestamp,
-        user_id int ,
+    user_id int,
     category_id  int,
     foreign key (user_id) references user(id),
     foreign key (category_id) references categories(id)
 );
 
 
-create table categories(
-    id int primary key auto_increment,
-    title varchar(30),
-    description varchar(50)
-);
+

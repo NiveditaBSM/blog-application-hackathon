@@ -1,4 +1,4 @@
-module.exports={
-     SECRET : 'sajkdhasdyawakjsacndaudawudhlsaskdjfhaeiufaaloifaoufabczdshewualsaiwuewofalksjdaoweanslk'
-    }
+module.exports = {
+     SECRET: 'sajkdhasdyawakjsacndaudawudhlsaskdjfhaeiufaaloifaoufabczdshewualsaiwuewofalksjdaoweanslk'
+}
 

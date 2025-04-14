@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "106cbef5-ce47-400e-a44b-598957a7bf84",
+		"name": "Blog Application Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38450891"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"full_name\":\"Nivedita Magadum\", \n    \"email\": \"nivedita@test.com\", \n    \"password\": \"test\", \n    \"phone_no\" : \"123456787\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL }}/user/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nivedita@test.com\",\n    \"password\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL }}/user/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL }}/category"
+					},
+					"response": []
+				},
+				{
+					"name": "category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"title\": \"Java\", \n   \"description\": \"concepts related to Java\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL }}/category/addCategory"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blog",
+			"item": [
+				{
+					"name": "create blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Java Tech\", \n    \"contents\":\"Web development using java for backend\", \n    \"category_id\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL }}/blog/createBlog"
+					},
+					"response": []
+				},
+				{
+					"name": "get my blogs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL }}/blog/getMyBlogs"
+					},
+					"response": []
+				},
+				{
+					"name": "get all blogs",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update blog",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Js based web tech\", \"category_id\": \"1\", \"contents\": \"jajajajajajaj JS all the way\", \"blog_id\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL }}/blog/editBlog"
+					},
+					"response": []
+				},
+				{
+					"name": "search blog",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN_NAKUL}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL }}/blog/1"
+					},
+					"response": []
+				},
+				{
+					"name": "get blog",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL }}/blog/getBlog/2"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL ",
+			"value": "http://localhost:4000",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJpYXQiOjE3NDQ2MTA5NzN9.JQw9qg4byZDjeYl6F5iwPNZr6QvgxXQ0E4Js6Phz12g",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN_NAKUL",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJpYXQiOjE3NDQ2MTM2MDd9.NXooTRCnaPVxidNLkrDh_xixhb4J-cY2Hv4xyTD2iiI",
+			"type": "string"
+		}
+	]
+}
