@@ -1,2 +1,4 @@
-export const SECRET = 'sajkdhasdyawakjsacndaudawudhlsaskdjfhaeiufaaloifaoufabczdshewualsaiwuewofalksjdaoweanslk'
+module.exports={
+     SECRET : 'sajkdhasdyawakjsacndaudawudhlsaskdjfhaeiufaaloifaoufabczdshewualsaiwuewofalksjdaoweanslk'
+    }
 

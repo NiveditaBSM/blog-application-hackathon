@@ -23,7 +23,7 @@ create table blogs(
 
 
 create table categories(
-    id int primary key ,
+    id int primary key auto_increment,
     title varchar(30),
     description varchar(50)
-)
+);

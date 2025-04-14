@@ -8,7 +8,7 @@ const config = require('../utils/config')
 router.post('/login', (request, response) => {
     const { email, password } = request.body
 
-    const sql = `SELECT * FROM users WHERE email = ? AND password = ?`
+    const sql = `SELECT * FROM user WHERE email = ? AND password = ?`
 
     pool.query(sql, [email, password], (error, data) => {
         if (data) {
